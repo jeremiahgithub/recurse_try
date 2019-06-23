@@ -22,7 +22,7 @@ String.send(:include, RecurseTry)
 ```
 * And now this works even though the return of the first method is an integer.
 ```
-' time mad Taco cat '.recurse_try('upcase.reverse.strip')
+'12345plusjunk'.recurse_try('to_i.to_s.reverse')
 ```
 Rails:
 I recommend that you put it on your model. That's where I use it.
@@ -51,5 +51,6 @@ Host.recurse_try(['first.owner.name', {'==': 'test'}])
 ```
 And now just for fun
 ```
+' time mad Taco cat '.recurse_try('upcase.reverse.strip')
 '123456789'.recurse_try({split: ''},'map','to_i',{'+': 1}).join #"2345678910"
 ```
